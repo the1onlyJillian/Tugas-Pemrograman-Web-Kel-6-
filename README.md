@@ -31,9 +31,11 @@ Setelah perbaikan
 ![Hasil Program](https://github.com/the1onlyJillian/Tugas-Pemrograman-Web-Kel-6-/blob/main/perbaikan%20bug%202_b.png?raw=true)
 ![Hasil Program](https://github.com/the1onlyJillian/Tugas-Pemrograman-Web-Kel-6-/blob/main/hasil%20perbaikan%20bug%202.png?raw=true)
 
+Code dan hasil awal bug 3
 
-![Hasil Program]()
-![Hasil Program]()
+![Hasil Program](codingbug3.png)
+![Hasil Program](bug3.png)
+
 ![Hasil Program]()
 ![Hasil Program]()
 ![Hasil Program]()
