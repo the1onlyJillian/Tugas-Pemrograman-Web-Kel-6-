@@ -13,4 +13,3 @@ kesalahan pada codingan :
 
 ![Hasil Program](Rondom.png)
 
-![Hasil Program](bug & perbaikan/bug1.png)
