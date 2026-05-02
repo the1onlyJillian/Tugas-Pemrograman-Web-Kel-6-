@@ -1,4 +1,4 @@
-<h1 align="center">Tugas-Pemrograman-Web-Kel-6-</h1>
+<h1 align="center">Tugas-Pemrograman-Web-Kel-6</h1>
 
 
 Nama Kelompok : 
