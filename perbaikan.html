@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Form Data Mahasiswa</title>
+<style>
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    color: #333;
+    background: radial-gradient(circle at top left, rgba(63, 81, 181, 0.14), transparent 28%),
+                radial-gradient(circle at bottom right, rgba(16, 185, 129, 0.12), transparent 25%),
+                #f3f6fb;
+  }
+  .container {
+    max-width: 960px;
+    margin: 30px auto;
+    padding: 0 18px 40px;
+    box-sizing: border-box;
+  }
+  h2 {
+    margin-bottom: 18px;
+    font-size: 2rem;
+    letter-spacing: -0.03em;
+    color: #1f2937;
+  }
+  .card {
+    background: rgba(255,255,255,0.95);
+    border-radius: 22px;
+    box-shadow: 0 24px 70px rgba(15, 23, 42, 0.08);
+    border: 1px solid rgba(148, 163, 184, 0.18);
+    padding: 30px;
+    margin-bottom: 32px;
+  }
+  form {
+    width: 100%;
+  }
+  form label {
+    display: block;
+    font-weight: 700;
+    margin-top: 18px;
+    margin-bottom: 8px;
+    color: #374151;
+  }
+  input[type="text"], input[type="password"], select, input[type="number"] {
+    width: 100%;
+    padding: 14px 16px;
+    font-size: 15px;
+    border: 1px solid #d1d5db;
+    border-radius: 14px;
+    background: #fbfdff;
+    transition: all 0.2s ease;
+    box-shadow: inset 0 1px 2px rgba(15, 23, 42, 0.05);
+  }
+  input[type="text"]:focus, input[type="password"]:focus, select:focus, input[type="number"]:focus {
+    outline: none;
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.08);
+  }
+  .gender-options {
+    display: flex;
+    gap: 22px;
+    margin-top: 6px;
+    flex-wrap: wrap;
+  }
+  .gender-options label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #eef2ff;
+    border: 1px solid #dbeafe;
+    border-radius: 999px;
+    padding: 10px 14px;
+    cursor: pointer;
+    color: #334155;
+    transition: transform 0.2s ease, background 0.2s ease;
+  }
+  .gender-options label:hover {
+    transform: translateY(-1px);
+    background: #e0e7ff;
+  }
+  .gender-options input[type="radio"] {
+    accent-color: #4f46e5;
+    min-width: auto;
+  }
+  .dob-selects {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 6px;
+  }
+  button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 14px;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 24px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+  }
+  button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 18px 30px rgba(15, 23, 42, 0.12);
+    opacity: 0.98;
+  }
+  button.submit-btn {
+    background-color: #2563eb;
+  }
+  button.reset-btn {
+    background-color: #f97316;
+    margin-left: 14px;
+  }
+  @media (max-width: 640px) {
+    .gender-options {
+      gap: 12px;
+      flex-direction: column;
+    }
+    .dob-selects {
+      grid-template-columns: 1fr;
+    }
+    button.reset-btn {
+      margin-left: 0;
+    }
+  }
+  .search-container {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-start;
+  }
+  .search-box {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+  }
+  .search-box input {
+    width: 100%;
+    padding: 12px 16px 12px 44px;
+    font-size: 15px;
+    border: 1px solid #d1d5db;
+    border-radius: 14px;
+    background: #fbfdff;
+    transition: all 0.2s ease;
+    box-shadow: inset 0 1px 2px rgba(15, 23, 42, 0.05);
+  }
+  .search-box input:focus {
+    outline: none;
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.08);
+  }
+  .search-icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    pointer-events: none;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 24px 60px rgba(15, 23, 42, 0.08);
+  }
+  th, td {
+    border-bottom: 1px solid #e5e7eb;
+    padding: 16px 14px;
+    text-align: center;
+    color: #475569;
+  }
+  th {
+    background-color: #f8fafc;
+    color: #1f2937;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  tbody tr:hover {
+    background: #f8fafc;
+  }
+  tbody tr:nth-child(even) {
+    background-color: #f9fafb;
+  }
+  td.aksi img {
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    margin: 0 6px;
+    transition: transform 0.2s ease;
+  }
+  td.aksi img:hover {
+    transform: scale(1.05);
+  }
+  .error-message {
+    color: #e11d48;
+    font-size: 13px;
+    margin-top: 6px;
+    display: none;
+  }
+  input.invalid, select.invalid {
+    border-color: #e11d48 !important;
+    background-color: #fef2f2;
+  }
+  input.invalid::placeholder {
+    color: #e11d48;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Form Data Mahasiswa</h2>
+
+  <form id="mahasiswaForm">
+  <label for="nim">NIM <span style="color: red;">*</span></label>
+  <input type="text" id="nim" name="nim" placeholder="Masukkan NIM" inputmode="numeric" required />
+  <div class="error-message" id="nim-error">NIM harus diisi dan hanya boleh angka</div>
+
+  <label for="nama">Nama <span style="color: red;">*</span></label>
+  <input type="text" id="nama" name="nama" placeholder="Masukkan Nama" required />
+  <div class="error-message" id="nama-error">Nama harus diisi dan hanya boleh huruf</div>
+
+  <label for="alamat">Alamat <span style="color: red;">*</span></label>
+  <input type="text" id="alamat" name="alamat" placeholder="Masukkan Alamat" required />
+  <div class="error-message" id="alamat-error">Alamat harus diisi</div>
+
+  <label>Jenis Kelamin <span style="color: red;">*</span></label>
+  <div class="gender-options">
+    <label><input type="radio" name="jk" value="Pria" required /> Pria</label>
+    <label><input type="radio" name="jk" value="Wanita" required /> Wanita</label>
+  </div>
+  <div class="error-message" id="jk-error">Jenis Kelamin harus dipilih</div>
+
+  <label>Tanggal Lahir <span style="color: red;">*</span></label>
+  <div class="dob-selects">
+    <select name="tgl" id="tgl" required>
+      <option value="">Tanggal</option>
+      <script>
+        for(let i=1; i<=31; i++){
+          document.write('<option value="'+i+'">'+i+'</option>');
+        }
+      </script>
+    </select>
+    <select name="bln" id="bln" required>
+      <option value="">Bulan</option>
+      <option value="1">Januari</option>
+      <option value="2">Februari</option>
+      <option value="3">Maret</option>
+      <option value="4">April</option>
+      <option value="5">Mei</option>
+      <option value="6">Juni</option>
+      <option value="7">Juli</option>
+      <option value="8">Agustus</option>
+      <option value="9">September</option>
+      <option value="10">Oktober</option>
+      <option value="11">November</option>
+      <option value="12">Desember</option>
+    </select>
+    <select name="thn" id="thn" required>
+      <option value="">Tahun</option>
+      <script>
+        const tahunSekarang = new Date().getFullYear();
+        for(let y=1990; y<=tahunSekarang; y++){
+          document.write('<option value="'+y+'">'+y+'</option>');
+        }
+      </script>
+    </select>
+  </div>
+  <div class="error-message" id="ttl-error">Tanggal Lahir harus lengkap</div>
+
+  <label for="password">Password <span style="color: red;">*</span></label>
+  <input type="password" id="password" name="password" placeholder="Masukkan Password" required />
+  <div class="error-message" id="password-error">Password harus diisi</div>
+
+  <button type="submit" class="submit-btn" id="submitBtn">Submit</button>
+  <button type="reset" class="reset-btn" id="resetBtn">Reset</button>
+</form>
+
+  <h2>Data Mahasiswa</h2>
+  <div class="search-container">
+    <div class="search-box">
+      <svg class="search-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M21 21L16.5 16.5M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z" stroke="#6b7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <input type="text" id="searchInput" placeholder="Cari berdasarkan NIM, Nama, atau Alamat..." />
+    </div>
+  </div>
+  <table>
+  <thead>
+    <tr>
+      <th>NIM</th>
+      <th>Nama</th>
+      <th>Alamat</th>
+      <th>Jenis Kelamin</th>
+      <th>Tanggal Lahir</th>
+      <th>Password</th>
+      <th>Aksi</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+</div>
+
+<script>
+  // Data array untuk menyimpan mahasiswa
+  let mahasiswaData = [];
+  let editingIndex = null;
+
+  function loadData() {
+    const saved = localStorage.getItem('mahasiswaData');
+    if (saved) {
+      mahasiswaData = JSON.parse(saved);
+    } else {
+      mahasiswaData = [
+        { nim: '202312015', nama: 'IMA', alamat: 'BONTANG', jk: 'Wanita', tgl: '1', bln: '1', thn: '1990', password: 'PASSWORD' }
+      ];
+      saveData();
+    }
+  }
+
+  function saveData() {
+    localStorage.setItem('mahasiswaData', JSON.stringify(mahasiswaData));
+  }
+
+  // Render tabel
+  function renderTable(data = mahasiswaData) {
+    const tbody = document.querySelector('table tbody');
+    tbody.innerHTML = '';
+    
+    data.forEach((data, index) => {
+      const row = tbody.insertRow();
+      const ttl = data.tgl + '-' + String(data.bln).padStart(2, '0') + '-' + data.thn;
+      const hiddenPassword = '•'.repeat(data.password.length);
+      row.innerHTML = `
+        <td>${data.nim}</td>
+        <td>${data.nama}</td>
+        <td>${data.alamat}</td>
+        <td>${data.jk}</td>
+        <td>${ttl}</td>
+        <td>${hiddenPassword}</td>
+        <td class="aksi">
+          <img src="https://cdn-icons-png.flaticon.com/512/1159/1159633.png" alt="Edit" title="Edit" onclick="editData(${index})" />
+          <img src="https://cdn-icons-png.flaticon.com/512/1214/1214428.png" alt="Delete" title="Delete" onclick="deleteData(${index})" />
+        </td>
+      `;
+    });
+  }
+
+  // Fungsi pencarian
+  function searchMahasiswa() {
+    const query = document.getElementById('searchInput').value.toLowerCase();
+    const filteredData = mahasiswaData.filter(mahasiswa => 
+      mahasiswa.nim.toLowerCase().includes(query) ||
+      mahasiswa.nama.toLowerCase().includes(query) ||
+      mahasiswa.alamat.toLowerCase().includes(query)
+    );
+    renderTable(filteredData);
+  }
+
+  // Event listener untuk search input
+  document.getElementById('searchInput').addEventListener('input', searchMahasiswa);
+
+  // Validasi form
+  function validateForm() {
+    let isValid = true;
+    const nim = document.getElementById('nim');
+    const nama = document.getElementById('nama');
+    const alamat = document.getElementById('alamat');
+    const jk = document.querySelector('input[name="jk"]:checked');
+    const tgl = document.getElementById('tgl');
+    const bln = document.getElementById('bln');
+    const thn = document.getElementById('thn');
+    const password = document.getElementById('password');
+
+    // Reset error states
+    document.querySelectorAll('input, select').forEach(el => el.classList.remove('invalid'));
+    document.querySelectorAll('.error-message').forEach(el => el.style.display = 'none');
+
+    // Validasi NIM
+    if (!nim.value || nim.value.trim() === '') {
+      nim.classList.add('invalid');
+      document.getElementById('nim-error').style.display = 'block';
+      isValid = false;
+    }
+
+    // Validasi Nama
+    if (!nama.value || nama.value.trim() === '') {
+      nama.classList.add('invalid');
+      document.getElementById('nama-error').style.display = 'block';
+      isValid = false;
+    }
+
+    // Validasi Alamat
+    if (!alamat.value || alamat.value.trim() === '') {
+      alamat.classList.add('invalid');
+      document.getElementById('alamat-error').style.display = 'block';
+      isValid = false;
+    }
+
+    // Validasi Jenis Kelamin
+    if (!jk) {
+      document.getElementById('jk-error').style.display = 'block';
+      isValid = false;
+    }
+
+    // Validasi Tanggal Lahir
+    if (!tgl.value || !bln.value || !thn.value) {
+      tgl.classList.add('invalid');
+      bln.classList.add('invalid');
+      thn.classList.add('invalid');
+      document.getElementById('ttl-error').style.display = 'block';
+      isValid = false;
+    }
+
+    // Validasi Password
+    if (!password.value || password.value.trim() === '') {
+      password.classList.add('invalid');
+      document.getElementById('password-error').style.display = 'block';
+      isValid = false;
+    }
+
+    return isValid;
+  }
+
+  // Submit form
+  document.getElementById('mahasiswaForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    if (!validateForm()) {
+      alert('Silakan lengkapi semua field yang diperlukan!');
+      return;
+    }
+
+    const nim = document.getElementById('nim').value;
+    const nama = document.getElementById('nama').value;
+    const alamat = document.getElementById('alamat').value;
+    const jk = document.querySelector('input[name="jk"]:checked').value;
+    const tgl = document.getElementById('tgl').value;
+    const bln = document.getElementById('bln').value;
+    const thn = document.getElementById('thn').value;
+    const password = document.getElementById('password').value;
+
+    const newData = { nim, nama, alamat, jk, tgl, bln, thn, password };
+
+    if (editingIndex !== null) {
+      // Update data
+      mahasiswaData[editingIndex] = newData;
+      editingIndex = null;
+      document.getElementById('submitBtn').textContent = 'Submit';
+      alert('Data berhasil diperbarui!');
+    } else {
+      // Cek duplikasi NIM
+      if (mahasiswaData.some(m => m.nim === nim)) {
+        alert('NIM sudah terdaftar!');
+        return;
+      }
+      // Tambah data
+      mahasiswaData.push(newData);
+      alert('Data berhasil ditambahkan!');
+    }
+
+    saveData();
+    renderTable();
+    this.reset();
+  });
+
+  // Edit data
+  function editData(index) {
+    const data = mahasiswaData[index];
+    document.getElementById('nim').value = data.nim;
+    document.getElementById('nama').value = data.nama;
+    document.getElementById('alamat').value = data.alamat;
+    document.querySelector(`input[name="jk"][value="${data.jk}"]`).checked = true;
+    document.getElementById('tgl').value = data.tgl;
+    document.getElementById('bln').value = data.bln;
+    document.getElementById('thn').value = data.thn;
+    document.getElementById('password').value = data.password;
+    
+    editingIndex = index;
+    document.getElementById('submitBtn').textContent = 'Update';
+    window.scrollTo(0, 0);
+  }
+
+  // Delete data
+  function deleteData(index) {
+    if (confirm('Apakah Anda yakin ingin menghapus data ini?')) {
+      mahasiswaData.splice(index, 1);
+      saveData();
+      renderTable();
+      alert('Data berhasil dihapus!');
+    }
+  }
+
+  // Validasi NIM - hanya boleh angka
+  const nimInput = document.getElementById('nim');
+  nimInput.addEventListener('input', function(e) {
+    this.value = this.value.replace(/[^0-9]/g, '');
+  });
+  
+  // Prevent paste non-numeric
+  nimInput.addEventListener('paste', function(e) {
+    e.preventDefault();
+    const pastedText = (e.clipboardData || window.clipboardData).getData('text');
+    const numericOnly = pastedText.replace(/[^0-9]/g, '');
+    this.value = numericOnly;
+  });
+
+  // Validasi Nama - hanya boleh huruf
+  const namaInput = document.getElementById('nama');
+  namaInput.addEventListener('input', function(e) {
+    this.value = this.value.replace(/[^a-zA-Z\s]/g, '');
+  });
+  
+  // Prevent paste non-alphabetic
+  namaInput.addEventListener('paste', function(e) {
+    e.preventDefault();
+    const pastedText = (e.clipboardData || window.clipboardData).getData('text');
+    const lettersOnly = pastedText.replace(/[^a-zA-Z\s]/g, '');
+    this.value = lettersOnly;
+  });
+
+  // Inisialisasi data dan render tabel awal
+  loadData();
+  renderTable();
+</script>
+</body>
+</html>
