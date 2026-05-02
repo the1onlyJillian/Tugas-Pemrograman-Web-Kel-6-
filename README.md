@@ -59,5 +59,5 @@ E. Code dan hasil bug 5
 Setelah perbaikan
 
 ![Hasil Program](codingperbaikan5js.png)
-![Hasil Program](codingperbaikan5hyml.png)
-![Hasil Program](hasilpebaikanbug5.png)
+![Hasil Program](codingperbaikan5html.png)
+![Hasil Program](hasilperbaikanbug5.png)
