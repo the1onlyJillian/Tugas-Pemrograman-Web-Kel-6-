@@ -70,5 +70,5 @@ F. Code dan hasil bug 6
 
 Setelah perbaikan
 
+![Hasil Program](perbaikancodinganbug6.png)
 ![Hasil Program](hasilperbaikanbug6.png)
-![Hasil Program](perbaikancodinganbug.png)
