@@ -3,7 +3,9 @@ Mencari, menganalisis dan melakukan perbaikan bug pada halaman web
 
 Nama Kelompok : 
 Nur Halimatul Sa'diah - 202312015
+
 Danis Martanius - 202412035
+
 Galang Surya Budi - 202412043
 
 Code dan hasil awal bug 1
@@ -29,4 +31,10 @@ Setelah perbaikan
 ![Hasil Program](https://github.com/the1onlyJillian/Tugas-Pemrograman-Web-Kel-6-/blob/main/hasil%20perbaikan%20bug%202.png?raw=true)
 
 
+![Hasil Program]()
+![Hasil Program]()
+![Hasil Program]()
+![Hasil Program]()
+![Hasil Program]()
+![Hasil Program]()
 ![Hasil Program]()
