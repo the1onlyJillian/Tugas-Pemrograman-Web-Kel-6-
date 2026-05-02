@@ -64,5 +64,11 @@ Setelah perbaikan
 
 F. Code dan hasil bug 6
 
-![Hasil Program]()
-![Hasil Program]()
+![Hasil Program](codinganbug6.png)
+![Hasil Program](bug6a.png)
+![Hasil Program](bug6b.png)
+
+Setelah perbaikan
+
+![Hasil Program](hasilperbaikanbug6.png)
+![Hasil Program](perbaikancodinganbug.png)
