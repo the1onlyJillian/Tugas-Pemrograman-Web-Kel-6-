@@ -1,6 +1,5 @@
 <h1 align="center">Tugas-Pemrograman-Web-Kel-6</h1>
 
-
 Nama Kelompok : 
 
 Nur Halimatul Sa'diah - 202312015
@@ -50,3 +49,15 @@ Setelah perbaikan
 
 ![Hasil Program](codingperbaikanbug4.png)
 ![Hasil Program](hasilperbaikanbug4.png)
+
+E. Code dan hasil bug 5
+
+![Hasil Program](codingbug5js.png)
+![Hasil Program](codingbug5html.png)
+![Hasil Program](bug5.png) 
+
+Setelah perbaikan
+
+![Hasil Program](codingperbaikan5js.png)
+![Hasil Program](codingperbaikan5hyml.png)
+![Hasil Program](hasilpebaikanbug5.png)
