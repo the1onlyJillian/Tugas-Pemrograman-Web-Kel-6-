@@ -8,7 +8,7 @@ Galang Surya Budi - 202412043
 
 Code awal
 
-![Hasil Program](https://github.com/the1onlyJillian/Tugas-Pemrograman-Web-Kel-6-/blob/main/codingikonawal.png?raw=true)
+![Hasil Program](codingikonawal.png)
 
 Hasil Awal
 
