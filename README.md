@@ -9,3 +9,6 @@ Galang Surya Budi - 202412043
 Ikon tidak muncul
 
 ![Hasil Program](https://github.com/the1onlyJillian/Tugas-Pemrograman-Web-Kel-6-/blob/main/Ikon%20tidak%20muncul.png?raw=true)
+
+Code awal
+
