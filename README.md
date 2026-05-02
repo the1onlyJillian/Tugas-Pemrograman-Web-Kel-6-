@@ -1,5 +1,5 @@
 <h1 align="center">Tugas-Pemrograman-Web-Kel-6-</h1>
-Mencari, menganalisis dan melakukan perbaikan bug pada halaman web
+
 
 Nama Kelompok : 
 
