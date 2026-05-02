@@ -61,3 +61,8 @@ Setelah perbaikan
 ![Hasil Program](codingperbaikanbug5js.png)
 ![Hasil Program](codingperbaikanbug5html.png)
 ![Hasil Program](hasilperbaikanbug5.png)
+
+F. Code dan hasil bug 6
+
+![Hasil Program]()
+![Hasil Program]()
