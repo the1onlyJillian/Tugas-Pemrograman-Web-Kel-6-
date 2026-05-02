@@ -18,9 +18,13 @@ Setelah perbaikan
 
 ![Hasil Perbaikan](perbaikan1.png)
 
-![Hasil Program]()
-![Hasil Program]()
-![Hasil Program]()
+Code dan hasil awal
+
+![Hasil Program](codinganbug2_a.png)
+![Hasil Program](codinganbug2_b.png)
+![Hasil Program](bug2.png)
+
+
 ![Hasil Program]()
 ![Hasil Program]()
 ![Hasil Program]()
