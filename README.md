@@ -21,3 +21,10 @@ Setelah perbaikan
 Hasil perbaikan
 
 ![Hasil Perbaikan](perbaikan1.png)
+![Hasil Program]()
+![Hasil Program]()
+![Hasil Program]()
+![Hasil Program]()
+![Hasil Program]()
+![Hasil Program]()
+![Hasil Program]()
