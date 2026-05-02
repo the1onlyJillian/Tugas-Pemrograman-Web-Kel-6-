@@ -20,4 +20,4 @@ Setelah perbaikan
 
 Hasil perbaikan
 
-![Hasil Perbaikan](Perbaikan1.png)
+![Hasil Perbaikan](perbaikan1.png)
