@@ -14,3 +14,6 @@ Galang Surya Budi - 202412043
 kesalahan pada codingan :
 
 ![Hasil Program](https://github.com/the1onlyJillian/Tugas-Pemrograman-Web-Kel-6-/blob/main/bug1.png?raw=true)
+
+
+![Hasil Program](https://github.com/the1onlyJillian/Tugas-Pemrograman-Web-Kel-6-/blob/main/coding1.png?raw=true)
