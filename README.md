@@ -58,6 +58,6 @@ E. Code dan hasil bug 5
 
 Setelah perbaikan
 
-![Hasil Program](codingperbaikan5js.png)
-![Hasil Program](codingperbaikan5html.png)
+![Hasil Program](codingperbaikanbug5js.png)
+![Hasil Program](codingperbaikanbug5html.png)
 ![Hasil Program](hasilperbaikanbug5.png)
