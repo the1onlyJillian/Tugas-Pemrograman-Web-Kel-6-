@@ -24,7 +24,7 @@ Code dan hasil awal bug 2
 
 Setelah perbaikan
 
-![Hasil Program](perbaikan bug 2_a.png)
+![Hasil Program](https://github.com/the1onlyJillian/Tugas-Pemrograman-Web-Kel-6-/blob/main/perbaikan%20bug%202_a.png?raw=true)
 ![Hasil Program](perbaikan bug 2_b.png)
 ![Hasil Program](hasil perbaikan bug 2.png)
 
