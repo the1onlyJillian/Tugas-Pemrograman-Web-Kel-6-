@@ -41,6 +41,12 @@ Setelah perbaikan
 ![Hasil Program](perbaikanbug3.png)
 ![Hasil Program](hasilperbaikanbug3.png)
 
-![Hasil Program]()
-![Hasil Program]()
-![Hasil Program]()
+D. Code dan hasil bug 4
+
+![Hasil Program](codingbug4.png)
+![Hasil Program](bug4.png)
+
+Setelah perbaikan
+
+![Hasil Program](codingperbaikanbug4.png)
+![Hasil Program](hasilperbaikanbug4.png)
