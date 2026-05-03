@@ -30,11 +30,17 @@ B. Code dan hasil awal bug 2
 ![Hasil Program](codinganbug2_b.png)
 ![Hasil Program](bug2.png)
 
+Analisis :
+Pada script awal, baris label di form yaitu <label>Jenis Kelamin</label><br> menuliskan teks panjang "Jenis Kelamin" di form, namun pada baris tabel <th>JK</th> justru menuliskan singkatan "JK" untuk kolom yang sama, menyebabkan ketidaksesuaian istilah. Begitu juga dengan baris <label>Tanggal Lahir</label> di form, sementara di tabel pada baris <th>TTL</th> menggunakan singkatan "TTL", sehingga terjadi ketidaksesuaian karena istilah yang digunakan tidak konsisten. Selain itu, pada baris radio button <input type="radio" name="jk" value="Lainnya"> Lainnya, opsi "Lainnya" masih tersedia tanpa adanya validasi yang memaksa pengguna memilih salah satu. 
+
 Setelah perbaikan
 
 ![Hasil Program](https://github.com/the1onlyJillian/Tugas-Pemrograman-Web-Kel-6-/blob/main/perbaikan%20bug%202_a.png?raw=true)
 ![Hasil Program](https://github.com/the1onlyJillian/Tugas-Pemrograman-Web-Kel-6-/blob/main/perbaikan%20bug%202_b.png?raw=true)
 ![Hasil Program](https://github.com/the1onlyJillian/Tugas-Pemrograman-Web-Kel-6-/blob/main/hasil%20perbaikan%20bug%202.png?raw=true)
+
+Analisi Perbaikan
+Baris tabel diubah menjadi <th>Jenis Kelamin</th> dan <th>Tanggal Lahir</th> agar sama persis dengan label di form, sehingga data yang disajikan di form dan di tabel sama. Pada baris <div class="gender-options">, radio button dibungkus agar rapi, dan opsi "Lainnya" dihilangkan dengan tidak menuliskan baris kode tersebut. Terakhir, ditambahkan baris <div class="error-message" id="jk-error">Jenis Kelamin harus dipilih</div> yang berfungsi menampilkan pesan peringatan jika pengguna belum memilih jenis kelamin, sehingga data yang masuk menjadi lebih lengkap dan valid. Dengan perubahan baris-baris kode ini, tampilan form dan tabel menjadi seragam, konsisten, dan lebih mudah dipahami pengguna.
 
 C. Code dan hasil awal bug 3
 
