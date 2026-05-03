@@ -13,13 +13,16 @@ A. Code dan hasil awal bug 1
 ![Hasil Program](codingikonawal.png)
 ![Hasil Program](https://github.com/the1onlyJillian/Tugas-Pemrograman-Web-Kel-6-/blob/main/Ikon%20tidak%20muncul.png?raw=true)
 
-Analisi : 
+AnalisiS : 
 Script menggunakan link gambar yang tidak terdeteksi alamatnya sehingga browser tidak bisa mengambil gambar tersebut ikon hanya tampak sebagai kotak pecah atau tidak muncul sama sekali. Selain itu, ikon edit dan hapus tidak muncul karena  kode masih menggunakan placeholder {index} pada atribut onclick, yang seharusnya diganti dengan nomor urut data yang sesungguhnya, sehingga fungsi edit dan hapus tidak terhubung dengan data manapun.
 
 Setelah perbaikan
 
 ![Hasil Program](codingperbaikan1.png)
 ![Hasil Perbaikan](perbaikan1.png)
+
+Analisis Perbaikan :
+Perbaikannya dengan mengganti placeholder {index} menjadi variabel ${index} yang berisi indeks data yang benar, serta mengganti URL gambar online dengan file gambar lokal (edit.jpg dan delete.jpg) yang berada di folder yang sama, sehingga ikon edit dan hapus bisa muncul dengan baik dan fungsinya pun berjalan normal.
 
 B. Code dan hasil awal bug 2
 
