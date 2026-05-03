@@ -112,7 +112,16 @@ F. Code dan hasil bug 6
 ![Hasil Program](bug6a.png)
 ![Hasil Program](bug6b.png)
 
+
+Analisi Bug :
+Pada script awal sebelum perbaikan, tidak ada mekanisme penyimpanan data secara permanen, sehingga saat halaman di-refresh, semua data yang sudah dimasukkan akan hilang karena data hanya tersimpan sementara di dalam memori browser (DOM). Baris-baris kode seperti const row = document.createElement("tr") dan tableBody.appendChild(row) hanya menambahkan baris ke tabel secara visual tanpa menyimpan data ke tempat yang permanen seperti localStorage atau cookie. Selain itu, tidak ada fungsi loadData() yang dipanggil saat halaman dimuat untuk mengambil data yang tersimpan sebelumnya, dan tidak ada fungsi saveData() yang dipanggil setelah submit untuk menyimpan data baru.  
+
+
 Setelah perbaikan
 
 ![Hasil Program](perbaikancodinganbug6.png)
 ![Hasil Program](hasilperbaikanbug6.png)
+
+
+Analisis Perbaikan :
+Perbaikan dilakukan dengan menambahkan beberapa baris kode penting. Baris let mahasiswaData = []; berfungsi membuat array kosong untuk menampung seluruh data mahasiswa secara terpusat. Baris function loadData() { const saved = localStorage.getItem('mahasiswaData'); if (saved) { mahasiswaData = JSON.parse(saved); } else { mahasiswaData = [ { nim: '202312015', nama: 'IMA', alamat: 'BONTANG', jk: 'Wanita', tgl: '1', bln: '1', thn: '1990', password: 'PASSWORD' } ]; saveData(); } } berisi logika untuk mengambil data dari localStorage saat halaman dimuat, dan jika belum ada data, maka akan mengisi dengan data contoh lalu menyimpannya. Baris function saveData() { localStorage.setItem('mahasiswaData', JSON.stringify(mahasiswaData)); } berfungsi mengubah array mahasiswaData menjadi format JSON dan menyimpannya ke localStorage setiap kali ada perubahan data (tambah, edit, atau hapus). Baris function renderTable(data = mahasiswaData) digunakan untuk menampilkan ulang tabel berdasarkan data yang ada di mahasiswaData, bukan hanya dari DOM. Di bagian event listener submit, setelah data baru ditambahkan ke mahasiswaData, dipanggil saveData() untuk menyimpan ke localStorage, lalu renderTable() untuk menampilkan ulang tabel. Terakhir, baris loadData(); renderTable(); dipanggil saat halaman pertama kali dimuat agar data yang tersedia di localStorage langsung ditampilkan. Dengan perbaikan baris-baris kode tersebut, data mahasiswa sekarang tersimpan secara permanen di localStorage browser, sehingga meskipun halaman di-refresh, data yang sudah dimasukkan sebelumnya tidak akan hilang dan tetap bisa dilihat.
