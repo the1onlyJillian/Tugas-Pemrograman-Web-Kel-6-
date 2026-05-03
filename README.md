@@ -67,10 +67,17 @@ D. Code dan hasil bug 4
 ![Hasil Program](codingbug4.png)
 ![Hasil Program](bug4.png)
 
+Analisis Bug
+Scrip menggunakan fungsi pendengar acara (event listener) yang langsung menjalankan proses pembuatan baris tabel segera setelah tombol submit ditekan tanpa adanya proses validasi data terlebih dahulu. Karena tidak ada pengecekan apakah variabel seperti nim, nama, atau alamat memiliki isi atau string kosong, scrip tetap mengeksekusi perintah appendChild(row) meskipun kolom input tidak diisi oleh pengguna. Akibatnya, nilai kosong tersebut tetap diproses ke dalam elemen <td>, sehingga menghasilkan tampilan tabel dengan kolom yang tidak memiliki data.
+
 Setelah perbaikan
 
 ![Hasil Program](codingperbaikanbug4.png)
 ![Hasil Program](hasilperbaikanbug4.png)
+
+Analisis Perbaikan :
+Memberikanfungsi tambahan validateForm() yang dipanggil di dalam pendengar acara (event listener) untuk memeriksa kelengkapan data sebelum proses pembuatan baris tabel dijalankan. Perbaikan dilakukan dengan menyisipkan kondisi if (!validateForm()) yang berfungsi sebagai gerbang logika; jika ada kolom yang kosong, sistem akan memunculkan peringatan (alert) dan menghentikan eksekusi perintah menggunakan instruksi return. Dengan diterapkannya validasi ini, scrip tidak akan lagi membuat baris baru di tabel jika input pengguna belum lengkap, sehingga masalah kolom kosong pada data mahasiswa dapat teratasi secara efektif.
+
 
 E. Code dan hasil bug 5
 
